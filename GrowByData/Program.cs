@@ -1,7 +1,6 @@
 using GrowByData.Data;
 using GrowByData.Data.Entities;
 using GrowByData.Job;
-using GrowByData.JobFactory;
 using GrowByData.Services;
 using Microsoft.EntityFrameworkCore;
 using Quartz;
