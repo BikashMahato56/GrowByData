@@ -1,0 +1,52 @@
+﻿@page
+@model GrowByData.Pages.Product.IndexModel
+@{
+    ViewData["Title"] = "Ecommerce Product List";
+    int i = 0;
+}
+<div class="text-center">
+    <h1 class="display-4">E-Commerce Products</h1>
+    <a asp-page="create" class="btn btn-primary" style="float:right;">Add Product</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>Name</th>
+                <th>Discount</th>
+                <th>Total Price</th>
+                <th>Rating</th>
+                <th>Recored On</th>
+                <th>Href</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.products != null)
+            {
+                @foreach (var product in Model.products)
+                {
+                    i++;
+                    <tr>
+                        <td>@i</td>
+                        <td>@product.Name</td>
+                        <td>@product.Discount</td>
+                        <td>@product.TotalPrice</td>
+                        <td>@product.Rating</td>
+                        <td>@product.AddedOn</td>
+                        <td>
+                            <a href=@product.Link>@product.Link</a>
+                        </td>
+                        <td>
+                            <a asp-page="Edit" asp-route-id="@product.ProductID" class="btn btn-primary">
+                                Edit
+                            </a>    
+                            <a asp-page="Delete" asp-route-id="@product.ProductID" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+
+
+    </table>
+</div>

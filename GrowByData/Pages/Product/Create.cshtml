@@ -1,0 +1,46 @@
+﻿@page
+@model GrowByData.Pages.CreateModel
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<div class="text-center">
+    <h3 class="display-4">Create Product</h3>
+</div>
+<form method="Post">
+    <div class="container-fluid col-md-6">
+        <div class="row">
+           
+                                 <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label asp-for="@Model.Product.Name">Name</label>
+                                        <input asp-for="@Model.Product.Name" class="form-control"/>
+                                    </div>
+                                </div>
+                                 <div class="col-md-12"> 
+                                     <div class="form-group">
+                                        <label>Discount</label>
+                                        <input asp-for="@Model.Product.Discount" class="form-control"/>
+                                    </div>
+                                </div>
+                                 <div class="col-md-12"> <div class="form-group">
+                                        <label>Total Price</label>
+                                        <input asp-for="@Model.Product.TotalPrice" class="form-control"/>
+                                    </div>
+                                </div>
+                                 <div class="col-md-12"> <div class="form-group">
+                                        <label>Rating</label>
+                                        <input asp-for="@Model.Product.Rating" class="form-control"/>
+                                    </div>
+                                </div>
+                                 <div class="col-md-12"> <div class="form-group">
+                                        <label>Link</label>
+                                        <input asp-for="@Model.Product.Link" class="form-control"/>
+                                    </div>
+                                </div>
+         </div>
+           <button type="submit" class="btn btn-success" align="right" style="float:right;">Save</button>
+           <button asp-page="Product/Index" class="btn btn-danger" align="right" style="float:right;">Cancel</button>
+   
+    </div>
+    </form>
